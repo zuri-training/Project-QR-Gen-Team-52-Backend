@@ -8,9 +8,11 @@ This project aims to create the best platform that allows users generate QR code
 
 ## TABLE OF CONTENT 
 
-1. [SetUp]
-2. [Walkthrough]
-3. [Project Features]
+1. [SetUp](## SetUp)
+2. [Walkthrough](## Walkthrough)
+3. [Project Features](## Project Features)
+4. [Test](## Test)
+5. [License](## License)
 
 
 
@@ -82,7 +84,7 @@ An Unauthorised User are users who have not 'Signed Up' on the platform. They ca
     - send Email
 
 
-## Tests
+## Test
 To run the tests, `cd` into the directory that `manage.py` is:
 ```sh
 (env)$ python manage.py test app
