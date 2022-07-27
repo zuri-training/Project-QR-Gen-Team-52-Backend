@@ -8,11 +8,11 @@ This project aims to create the best platform that allows users generate QR code
 
 ## TABLE OF CONTENT 
 
-1. [SetUp](## SetUp)
-2. [Walkthrough](## Walkthrough)
-3. [Project Features](## Project Features)
-4. [Test](## Test)
-5. [License](## License)
+1. [SetUp](#SetUp)
+2. [Walkthrough](#Walkthrough)
+3. [Project Features](#ProjectFeatures)
+4. [Test](#Test)
+5. [License](#License)
 
 
 
