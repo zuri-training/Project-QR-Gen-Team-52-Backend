@@ -1,21 +1,16 @@
 # PROJECT QR CODE GENERATOR APPLICATION
 
-
 ## Introduction
 
 This project aims to create the best platform that allows users generate QR code for their various needs. The primary goals are flexible sharing options (allow users download generated QR codes in png, jpeg, and pdf format or share the code via email / social media platforms) and promote personalised user history and archives. Secondary goals are to enhance user experience by allowing users customise generated codes to desired brand colours and good documentation comments.
 
-
-## TABLE OF CONTENT 
+## TABLE OF CONTENT
 
 1. [SetUp](#SetUp)
 2. [Walkthrough](#Walkthrough)
 3. [Project Features](#ProjectFeatures)
 4. [Test](#Test)
 5. [License](#License)
-
-
-
 
 ## SetUp
 
