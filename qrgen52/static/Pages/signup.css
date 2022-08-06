@@ -1,0 +1,127 @@
+
+.bnt1 {
+    border-radius: 5px;
+    border: none;
+    width: 250px;
+    height: 30px;
+    margin: 10px 0px;
+}
+
+.bnt1:hover {
+    color: rgb(243, 128, 243);
+}
+
+.bnt2 {
+    border-radius: 5px;
+    border: none;
+    width: 250px;
+    height: 30px;
+}
+
+.bnt2:hover {
+    color: rgb(243, 128, 243);
+}
+
+.bnt3 {
+    border-radius: 5px;
+    border: none;
+    width: 250px;
+    height: 30px;
+    margin: 20px 0px;
+    background-color: #2F113E;
+    color: white;
+
+}
+
+.bnt3:hover {
+    background: #E12D93 0%;
+}
+
+.privacy{
+    color: rgb(243, 128, 243);
+}
+
+.hrd {
+    margin-top: 15px;
+    margin-bottom: 15px;
+    width: 300px;
+    margin-left: 165px;
+    opacity: 0.4;
+    height: 0.5px;
+}
+
+.sign {
+    margin: 30px 0px;
+}
+
+.middle {
+    width: 634px;
+    height: 631.07px;
+    left: 403px;
+    top: 256px;
+    display: block;
+    text-align: center;
+    margin-left: 28%;
+    margin-top: 150px;
+}
+
+.formtext {
+    margin-right: 170px;
+    font-size: 12px;
+}
+
+.formtext1 {
+    margin-right: 197px;
+}
+
+.pie {
+    width: 300px;
+    font-size: 12px;
+    margin-left: 170px;
+}
+
+.put {
+    width: 250px;
+    height: 30px;
+    border-radius: 5px;
+    border: none;
+    margin: 10px 0px;
+}
+.mobile{
+    display: inline;
+}
+.mobil{
+    display: none;
+}
+.imag{
+    height: 12px;
+    width: 12px;
+    text-align: left;
+}
+
+
+@media only screen and (max-width: 744px) {
+    header {
+        display: none;
+    }
+
+    body {
+        background: linear-gradient(116.99deg, #E12D93 0%, #2F113E 99.5);
+    }
+
+    .middle{
+        display: flex;
+        flex-direction: column;
+        margin: 30px;
+    }
+
+
+   
+    .mobil{
+        display: inherit;
+        width: 300px;
+        height: 200px;
+        margin: 50px auto;
+        filter: brightness(10);
+    }
+}
