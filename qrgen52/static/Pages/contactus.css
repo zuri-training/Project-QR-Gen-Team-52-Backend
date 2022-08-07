@@ -109,7 +109,7 @@ span {
 
 #btn11:hover {
     transition: ease-in-out 0.3s;
-    font-weight: 700;
+    /* font-weight: 700; */
     background: #E12D93 0%;
 }
 

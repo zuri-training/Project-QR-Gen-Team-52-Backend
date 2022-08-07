@@ -33,13 +33,11 @@
           </div>
 
           <ul class="nav_links">
-            <li>
-              <a target="_blank" href="./index.html">Home</a>
-            </li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">FAQ</a></li>
+            <li><a href="{% url 'home' %}">Home</a></li>
+            <li><a href="{% url 'about' %}">About</a></li>
+            <li><a href="{% url 'faq' %}">FAQ</a></li>
             <li><a href="#">Help</a></li>
-            <li><a href="./Pages/contactus.html">Contact Us</a></li>
+            <li><a href="{% url 'contact' %}">Contact Us</a></li>
           </ul>
         </nav>
       </div>
@@ -77,7 +75,7 @@
             </ol>
           </div>
           <div class="btn">
-            <a href="/Pages/signup.html">
+            <a href="{% url 'register' %}">
               <button class="btn-light">Get Started Now!</button>
             </a>
           </div>
@@ -88,7 +86,7 @@
     <footer>
       <div class="box">
         <div class="">
-          <img src="/logo/logo-black.png" alt="" />
+          <img src="{% static 'logo/logo-white.png' %}" alt="" />
           <h1>HAVE QUESTIONS? SAY HELLO!</h1>
           <h3>support@qrteam52.com</p>
         </div>

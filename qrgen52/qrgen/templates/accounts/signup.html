@@ -25,18 +25,16 @@
     <div class="">
       <nav class="navbar">
         <div class="nav_logo">
-          <img class="mobile" src="../logo/logo-black.png" alt="">
+          <img class="mobile" src="{% static "logo/logo-black.png" %}" alt="">
           <p>TEAM 52</p>
         </div>
 
         <ul class="nav_links">
-          <li>
-            <a href="/index.html">Home</a>
-          </li>
-          <li><a href="#">About</a></li>
-          <li><a href="#">FAQ</a></li>
-          <li><a href="#">Help</a></li>
-          <li><a href="contactus.html">Contact Us</a></li>
+          <li><a href="{% url 'home' %}">Home</a></li>
+            <li><a href="{% url 'about' %}">About</a></li>
+            <li><a href="{% url 'faq' %}">FAQ</a></li>
+            <li><a href="#">Help</a></li>
+            <li><a href="{% url 'contact' %}">Contact Us</a></li>
         </ul>
         <i class="fa-regular fas fa-user"></i>
       </nav>
@@ -67,9 +65,9 @@
       </div>
       <div>
         <P>OR</P><br>
-
-        <button type="button" class="bnt1">Sign Up with Google<img class="imag" src="../logo/googleicon.png"></button><br>
-        <!-- <button type="button" class="bnt2">Sign Up with Facebook<img class="imag" src="../logo/appleicon.png"></button> -->
+        <a href="{% static 'Pages/gmail.html' %}"><button type="button" class="bnt1">Sign Up with Google<img class="imag" src="{% static "logo/googleicon.png" %}"></button><br></a>
+        <button type="button" class="bnt1">Sign Up with Google<img class="imag" src="{% static "logo/googleicon.png" %}"></button><br>
+        <button type="button" class="bnt2">Sign Up with Facebook<img class="imag" src="{% static "logo/appleicon.png" %}"></button>
 
       </div>
       

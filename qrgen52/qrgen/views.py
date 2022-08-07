@@ -54,3 +54,13 @@ def loginpage(request):
             return redirect('login')
 
     return render(request, 'accounts/login.html', {})
+
+
+def contactpage(request):
+    return render(request, 'contactus.html', {})
+
+def aboutpage(request):
+    return render(request, 'index.html', {})
+
+def faqpage(request):
+    return render(request, 'index.html', {})

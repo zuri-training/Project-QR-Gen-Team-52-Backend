@@ -81,66 +81,77 @@ body {
     background-size: cover;
 }
 
-#bg_mobile{
+#bg_mobile {
     display: none;
 }
 
-h1{
+h1 {
     text-align: center;
     margin-top: 120px;
 }
 
-.input-field{
+.input-field {
     margin: 20px auto 0 auto;
 }
 
-.input-alternate{
+.input-alternate {
     margin: 10px auto 0 auto;
 }
 
-p{
+p {
     text-align: center;
 }
 
-td{
+td {
     width: 300px;
     font-weight: 400;
     height: 40px;
 }
 
-#email,#password,#login,button{
+input {
+    border: none;
+    outline: none;
+}
+
+#email,
+#password,
+#login,
+button {
     width: 300px;
     height: 40px;
     border-radius: 5px;
+    border: none;
+    outline: none;
 }
 
-#email,#password{
+#email,
+#password {
     border: 1px solid palevioletred;
 }
 
-#login{
+#login {
     margin-top: 20px;
     background-color: #2F113E;
     color: white;
     border: 1px solid #2F113E;
 }
 
-#login:active{
+#login:active {
     border: 1px solid #E12D93;
 }
 
-.block{
+.block {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    
+
 }
 
-#apple{
+#apple {
     margin: 30px 0 10px 0;
 }
 
-hr{
+hr {
     width: 320px;
     margin-left: auto;
     margin-right: auto;
@@ -148,36 +159,38 @@ hr{
     color: grey;
 }
 
-#labb{
+#labb {
     height: 20px;
     font-size: 12px;
+    border: none;
+    outline: none;
 }
 
-.google{
+.google {
     display: flex;
     justify-content: space-between;
     margin-left: 25%;
     margin-right: 25%;
 }
 
-.apple{
+.apple {
     margin-left: 27%;
     margin-right: 27%;
 }
 
-button{
+button {
     border: 1px solid white;
 }
 
-button:active{
-    border:1px solid #E12D93;
+button:active {
+    border: 1px solid #E12D93;
 }
 
-.foot{
+.foot {
     font-size: 12px;
 }
 
-.foot a{
+.foot a {
     color: rgb(243, 128, 243);
     font-weight: 600;
 }
@@ -185,13 +198,14 @@ button:active{
 
 /* THIS PART IS FOR THE FAILED/SUCCESS LOGIN NOTIFICATION AND ARE NOT VISIBLE BY DEFAULT */
 
-#container{
+#container {
     position: relative;
     width: 350px;
     margin: 0 auto;
 }
 
-#pop,#pop1{
+#pop,
+#pop1 {
     width: 350px;
     height: 280px;
     border-radius: 10px;
@@ -201,7 +215,8 @@ button:active{
     transform: translateY(-240px);
 }
 
-#error-message,#success{
+#error-message,
+#success {
     background-color: pink;
     color: brown;
     font-size: 14px;
@@ -215,7 +230,7 @@ button:active{
     margin-top: 20px;
 }
 
-#continue{
+#continue {
     background-color: pink;
     color: brown;
     font-size: 14px;
@@ -229,32 +244,35 @@ button:active{
     border: none;
 }
 
-#continue:active{
+#continue:active {
     border: 1px solid brown;
 }
 
-#success{
+#success {
     background-color: rgba(42, 230, 67, 0.541);
     color: #1b4c13;
     height: 40px;
 }
 
 
-@media only screen and (max-width: 744px)  {
+@media only screen and (max-width: 744px) {
     header {
         display: none;
-      }
-    body{
-        background: linear-gradient(to right, #E12D93, #2F113E);    }
+    }
 
-    #bg_mobile{
+    body {
+        background: linear-gradient(to right, #E12D93, #2F113E);
+    }
+
+    #bg_mobile {
         display: inherit;
         width: 300px;
         height: 200px;
         margin: 50px auto;
         filter: brightness(10);
     }
-    .foot{
+
+    .foot {
         margin-bottom: 50px;
     }
 }
