@@ -1,4 +1,3 @@
-
 .bnt1 {
     border-radius: 5px;
     border: none;
@@ -37,7 +36,7 @@
     background: #E12D93 0%;
 }
 
-.privacy{
+.privacy {
     color: rgb(243, 128, 243);
 }
 
@@ -68,10 +67,12 @@
 .formtext {
     margin-right: 170px;
     font-size: 12px;
+    padding-right: 15px;
 }
 
 .formtext1 {
     margin-right: 197px;
+    padding-right: 15px;
 }
 
 .pie {
@@ -85,18 +86,24 @@
     height: 30px;
     border-radius: 5px;
     border: none;
+    outline: none;
     margin: 10px 0px;
+    padding-left: 8px;
 }
-.mobile{
+
+.mobile {
     display: inline;
 }
-.mobil{
+
+.mobil {
     display: none;
 }
-.imag{
+
+.imag {
     height: 12px;
-    width: 12px;
+    width: 18px;
     text-align: left;
+    padding-left: 5px;
 }
 
 
@@ -109,15 +116,15 @@
         background: linear-gradient(116.99deg, #E12D93 0%, #2F113E 99.5);
     }
 
-    .middle{
+    .middle {
         display: flex;
         flex-direction: column;
         margin: 30px;
     }
 
 
-   
-    .mobil{
+
+    .mobil {
         display: inherit;
         width: 300px;
         height: 200px;

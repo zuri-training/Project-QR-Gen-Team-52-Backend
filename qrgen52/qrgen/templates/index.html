@@ -17,8 +17,8 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-    <link rel="stylesheet" href="{% static main.css %}">
-    <link rel="stylesheet" href="{% static styles.css %}" />
+    <link rel="stylesheet" href="{% static "main.css" %}" />
+    <link rel="stylesheet" href="{% static "styles.css" %}" />
     <title>QR Generator</title>
   </head>
   <body>
@@ -28,7 +28,7 @@
       <div class="">
         <nav class="navbar">
           <div class="nav_logo">
-            <img src="./logo/logo-black.png" class="nav_logo" alt="" />
+            <img src="{% static 'logo/logo-black.png' %}" class="nav_logo" alt="" />
             <p>TEAM 52</p>
           </div>
 
@@ -48,7 +48,7 @@
     <section class="">
       <div class="box">
         <aside>
-          <img src="./img/QR_bg_image-2.png" alt="" />
+          <img src="{% static 'img/QR_bg_image-2.png' %}" alt="" />
         </aside>
 
         <main>
