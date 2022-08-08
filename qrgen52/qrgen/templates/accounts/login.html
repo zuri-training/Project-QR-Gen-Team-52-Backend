@@ -108,19 +108,27 @@
     </div>
   
           <p>OR</p>
-
+      {% load socialaccount %}
       <table class="input-alternate">
         <tr>
           <td>
-            <button>
+            <a href="{% provider_login_url 'google'%}">
+              <button>
               <div class="google">
                 <p>Continue with Google</p>
                 <img src="{% static 'logo/googleicon.png' %}" alt="" width="14" height="14">
               </div>
             </button>
+            </a>
+            {% comment %} <button>
+              <div class="google">
+                <p>Continue with Google</p>
+                <img src="{% static 'logo/googleicon.png' %}" alt="" width="14" height="14">
+              </div>
+            </button> {% endcomment %}
           </td>
         </tr>
-        <tr>
+        {% comment %} <tr>
           <td>
             <button id="apple">
               <div class="google apple">
@@ -129,8 +137,9 @@
               </div>
             </button>
           </td>
-        </tr>
+        </tr> {% endcomment %}
       </table>
+      <br />
       <hr>
       <p class="foot">Don't have an account? <a href="{% url 'register' %}">Sign Up</a></p>
 

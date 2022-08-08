@@ -65,9 +65,11 @@
       </div>
       <div>
         <P>OR</P><br>
-        <a href="{% static 'Pages/gmail.html' %}"><button type="button" class="bnt1">Sign Up with Google<img class="imag" src="{% static "logo/googleicon.png" %}"></button><br></a>
-        <button type="button" class="bnt1">Sign Up with Google<img class="imag" src="{% static "logo/googleicon.png" %}"></button><br>
-        <button type="button" class="bnt2">Sign Up with Facebook<img class="imag" src="{% static "logo/appleicon.png" %}"></button>
+        {% load socialaccount %}
+        <a href="{% provider_login_url 'google'%}"><button type="button" class="bnt1">Sign Up with Google<img class="imag" src="{% static "logo/googleicon.png" %}"></button></a>
+        <br />
+        {% comment %} <a href="{% provider_login_url 'google'%}"> <button type="button" class="bnt2">Sign Up with Apple<img class="imag" src="{% static "logo/appleicon.png" %}"></button></a> {% endcomment %}
+       
 
       </div>
       
