@@ -54,7 +54,7 @@ INSTALLED_APPS = [
     'allauth.socialaccount',
     'allauth.socialaccount.providers.google',
     
-    # "qr_code_demo"
+    # "qr_code_demo"  
 
 ]
 
@@ -186,3 +186,5 @@ CACHES = {
 }
 
 QR_CODE_CACHE_ALIAS = 'qr-code'
+
+SERVE_QR_CODE_IMAGE_PATH = 'qr-code-image/'

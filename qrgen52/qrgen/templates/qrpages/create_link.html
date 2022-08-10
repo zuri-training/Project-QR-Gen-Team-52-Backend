@@ -87,7 +87,7 @@
           <img src="../img/qr-large.png" alt="Qr large" />
         </div>
         <section class="left">
-          <div class="create_link">
+          <div class="create_link qr_url_from_text">
             <h1>Enter your URL</h1>
             <p>Your code will be automatically generated</p>
             <form method="post">
@@ -157,11 +157,13 @@
                 <input type="file" accept="image/*" />
               </div>
             </div>
-
+            {% load qr_code %}
             <div class="bottom" class="dropdown" id="pdrop2">
-              <button type="submit" class="submit-button">
-                Generate QR Code
-              </button>
+              <a href="{% qr_code %}">
+                <button type="submit" class="submit-button">
+                  Generate QR Code
+                </button></a
+              >
             </div>
           </div>
         </section>

@@ -1,3 +1,5 @@
+from django.shortcuts import render
+from qr_code.qrcode.utils import QRCodeOptions
 import email
 from wsgiref import validate
 from django.shortcuts import render, redirect
@@ -84,3 +86,13 @@ def image_qr(request):
 
 def video_qr(request):
     return render(request, 'qrpages/video.html', {})
+
+
+def qr_code(request):
+    # Build context for rendering QR codes.
+    # context = dict(
+    #     my_options=QRCodeOptions(size='t', border=6, error_correction='L'),
+    # )
+
+    # Render the view.
+    return render(request, 'qr_pages/download_successful.html', {})

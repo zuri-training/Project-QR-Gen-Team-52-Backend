@@ -1,5 +1,7 @@
 from django.urls import path
 from . import views
+from django.conf.urls import include
+from django.urls import path
 
 urlpatterns = [
     path('', views.home, name='home'),
@@ -15,6 +17,7 @@ urlpatterns = [
     path('image-qr/', views.image_qr, name='image-qr'),
     path('video-qr/', views.video_qr, name='video-qr'),
 
+    
 
-
+    path('qr_code/', views.qr_code, name="qr_code"),
 ]
