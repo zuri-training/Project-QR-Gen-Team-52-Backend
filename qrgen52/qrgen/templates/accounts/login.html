@@ -1,0 +1,149 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="/logo/logo-black.png" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet"/>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
+      integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="{% static "Pages/login.css" %}">
+    <title>QR Generator</title>
+  </head>
+  
+    <!-- code start -->
+  <body>
+    <header class="">
+        <div class="">
+          <nav class="navbar">
+            <div class="nav_logo">
+              <img src="{% static "logo/logo-black.png" %}" class="nav_logo" alt="" />
+              <p>TEAM 52</p>
+            </div>
+
+            <ul class="nav_links">
+              <li><a href="{% url 'home' %}">Home</a></li>
+            <li><a href="{% url 'about' %}">About</a></li>
+            <li><a href="{% url 'faq' %}">FAQ</a></li>
+            <li><a href="#">Help</a></li>
+            <li><a href="{% url 'contact' %}">Contact Us</a></li>
+            </ul>
+          </nav>
+        </div>
+    </header>
+    <img id="bg_mobile" src="../logo/logo-white.png" alt="">
+
+  
+    <h1>Login to your account</h1><br>
+    {% if messages %}
+        {% for message in messages %}
+        <h3 style="color:red; text-align: center">{{message}}</h3>
+        {% endfor %}
+        {% endif %} 
+
+    <div id="container">
+      <table class="input-field">
+        <form action="#" method="POST">
+          {% csrf_token %}
+          <tr>
+            <td id="labb">Email</td>
+          </tr>
+
+          <tr>
+            <td><input type="email" name="email" id="email" placeholder="  team52@zuri.com"></td>
+          </tr>
+
+          <tr>
+            <td id="labb">Password</td>
+          </tr>
+
+          <tr>
+            <td><input type="password" name="pword" id="password" minlength="8" placeholder="  Minimum of 8 characters"></td>
+          </tr>
+
+          <tr>
+            <td><button id="login">Log In</button></td>
+          </tr>
+          <tr>
+            <td id="remm">
+              <div class="block">
+                <div class="block2">
+                  <input id="remember_me" type="checkbox" name="remember">
+                  <label for="remember_me">Remember me</label>
+                </div>
+                <a href="#">Forgot password</a>
+              </div>   
+            </td>
+          </tr>
+        </table>
+      </form>
+
+      <div id="pop" style="display: none;">
+        <div id="error-message">
+          <img src="{% static 'img/error.webp.png' %}" alt="error icon" width="30px" height="30px">
+          <p>Incorrect login details entered</p>
+        </div>
+        <button id="continue" onclick="failText()">Continue</button>
+      </div>
+
+      <div id="pop1" style="display: none;">
+        <div id="success">
+          <img src="{% static 'img/success.png' %}" alt="error icon" width="20px" height="20px">
+          <p>Login successful</p>
+        </div>
+
+        <!-- PLEASE REPLACE THE GOOGLE LINK IN THE NEXT LINE WITH THE DASHBOARD LINK-->
+
+        <button id="continue" onclick="window.location.href='https://google.com';">Continue</button>
+      </div>
+    </div>
+  
+          <p>OR</p>
+      {% load socialaccount %}
+      <table class="input-alternate">
+        <tr>
+          <td>
+            <a href="{% provider_login_url 'google'%}">
+              <button>
+              <div class="google">
+                <p>Continue with Google</p>
+                <img src="{% static 'logo/googleicon.png' %}" alt="" width="14" height="14">
+              </div>
+            </button>
+            </a>
+            {% comment %} <button>
+              <div class="google">
+                <p>Continue with Google</p>
+                <img src="{% static 'logo/googleicon.png' %}" alt="" width="14" height="14">
+              </div>
+            </button> {% endcomment %}
+          </td>
+        </tr>
+        {% comment %} <tr>
+          <td>
+            <button id="apple">
+              <div class="google apple">
+                <p>Continue with Apple</p>
+                <img src="{% static 'logo/appleicon.png' %}" alt="" width="14" height="14">
+              </div>
+            </button>
+          </td>
+        </tr> {% endcomment %}
+      </table>
+      <br />
+      <hr>
+      <p class="foot">Don't have an account? <a href="{% url 'register' %}">Sign Up</a></p>
+
+      <script src="{% static 'Pages/login.js' %}"></script>
+
+  </body>
+</html>
