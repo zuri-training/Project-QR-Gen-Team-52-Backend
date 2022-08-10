@@ -52,6 +52,8 @@ INSTALLED_APPS = [
     'allauth.account',
     'allauth.socialaccount',
     'allauth.socialaccount.providers.google',
+    "qr_code", 
+    "qr_code_demo"
 
 ]
 
@@ -157,7 +159,7 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 
 SITE_ID = 1
-LOGIN_REDIRECT_URL = '/login'
+LOGIN_REDIRECT_URL = '/create-qr'
 
 SOCIALACCOUNT_PROVIDERS = {
     'google': {
@@ -170,3 +172,16 @@ SOCIALACCOUNT_PROVIDERS = {
         }
     }
 }
+
+CACHES = {
+    'default': {
+        'BACKEND': 'django.core.cache.backends.locmem.LocMemCache',
+    },
+    'qr-code': {
+        'BACKEND': 'django.core.cache.backends.locmem.LocMemCache',
+        'LOCATION': 'qr-code-cache',
+        'TIMEOUT': 3600
+    }
+}
+
+QR_CODE_CACHE_ALIAS = 'qr-code'

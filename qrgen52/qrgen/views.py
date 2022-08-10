@@ -11,6 +11,7 @@ from django.contrib import messages
 def home(request):
     return render(request, 'index.html', {})
 
+
 def register(request):
     if request.method == 'POST':
         email = request.POST.get('email')
@@ -18,39 +19,42 @@ def register(request):
         username = request.POST.get('username')
 
         if len(password) < 8:
-            messages.error(request,'Password must be atleast 8 characters')
+            messages.error(request, 'Password must be atleast 8 characters')
             return redirect('register')
 
         get_all_users_by_username = User.objects.filter(username=username)
         if get_all_users_by_username:
-             messages.error(request,'Username already exist, Try Another')
-             return redirect('register')
+            messages.error(request, 'Username already exist, Try Another')
+            return redirect('register')
 
         get_all_users_by_email = User.objects.filter(email=email)
         if get_all_users_by_email:
-             messages.error(request,'Email already exist, Try Another')
-             return redirect('register')
+            messages.error(request, 'Email already exist, Try Another')
+            return redirect('register')
 
-        new_user = User.objects.create_user(username=username, email=email, password=password)
+        new_user = User.objects.create_user(
+            username=username, email=email, password=password)
         new_user.save()
-        
+
         messages.success(request, 'User succesfully created')
         return redirect('login')
 
     return render(request, 'accounts/signup.html', {})
+
 
 def loginpage(request):
     if request.method == 'POST':
         email = request.POST.get('email')
         password = request.POST.get('pword')
 
-        validate_user = authenticate(email=email,password=password)
+        validate_user = authenticate(email=email, password=password)
         if validate_user is not None:
-            login(request,validate_user)
+            login(request, validate_user)
             return redirect('home-page')
 
         else:
-            messages.error(request,'Wrong User Details or User does not exist')
+            messages.error(
+                request, 'Wrong User Details or User does not exist')
             return redirect('login')
 
     return render(request, 'accounts/login.html', {})
@@ -59,8 +63,24 @@ def loginpage(request):
 def contactpage(request):
     return render(request, 'contactus.html', {})
 
+
 def aboutpage(request):
     return render(request, 'index.html', {})
 
+
 def faqpage(request):
     return render(request, 'index.html', {})
+
+
+#qr pages
+def create_qr(request):
+    return render(request, 'qrpages/create_link.html', {})
+
+def audio_qr(request):
+    return render(request, 'qrpages/audio.html', {})
+
+def image_qr(request):
+    return render(request, 'qrpages/image.html', {})
+
+def video_qr(request):
+    return render(request, 'qrpages/video.html', {})
