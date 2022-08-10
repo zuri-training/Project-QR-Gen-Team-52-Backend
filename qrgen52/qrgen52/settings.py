@@ -47,13 +47,14 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.sites',
+    'qr_code',
     'qrgen',
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
     'allauth.socialaccount.providers.google',
-    "qr_code", 
-    "qr_code_demo"
+    
+    # "qr_code_demo"
 
 ]
 
