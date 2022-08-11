@@ -51,7 +51,7 @@ def loginpage(request):
         validate_user = authenticate(username=username,password=password)
         if validate_user is not None:
             login(request,validate_user)
-            return redirect('home')
+            return redirect('create_link')
 
         else:
             messages.error(request,'Wrong User Details or User does not exist')
