@@ -46,7 +46,6 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-<<<<<<< HEAD
     'django.contrib.sites',
     'qr_code',
     'qrgen',
@@ -54,12 +53,7 @@ INSTALLED_APPS = [
     'allauth.account',
     'allauth.socialaccount',
     'allauth.socialaccount.providers.google',
-    
-    # "qr_code_demo"  
 
-=======
-    'qr_code',
->>>>>>> main
 ]
 
 MIDDLEWARE = [
