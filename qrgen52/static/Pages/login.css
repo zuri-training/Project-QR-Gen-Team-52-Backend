@@ -113,7 +113,7 @@ input {
     outline: none;
 }
 
-#email,
+#username,
 #password,
 #login,
 button {
@@ -124,7 +124,7 @@ button {
     outline: none;
 }
 
-#email,
+#username,
 #password {
     border: 1px solid palevioletred;
 }

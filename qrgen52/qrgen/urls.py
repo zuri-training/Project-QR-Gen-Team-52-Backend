@@ -1,23 +1,18 @@
 from django.urls import path
 from . import views
-from django.conf.urls import include
-from django.urls import path
+from django.conf.urls.static import static
+from django.conf import settings
 
 urlpatterns = [
-    path('', views.home, name='home'),
-    path('register/', views.register, name='register'),
-    path('login/', views.loginpage, name='login'),
+    path('',views.home, name='home'),
+    path('register/',views.register, name='register'),
+    path('login/',views.loginpage, name='login'),
     path('about/', views.aboutpage, name='about'),
     path('contact/', views.contactpage, name='contact'),
     path('faq/', views.faqpage, name='faq'),
+    path('create_link/', views.create_link, name='create_link'),
+    path('send_mail/', views.send_mail, name='send_mail'),
 
-    # qr pages
-    path('create-qr/', views.create_qr, name='create-qr'),
-    path('audio-qr/', views.audio_qr, name='audio-qr'),
-    path('image-qr/', views.image_qr, name='image-qr'),
-    path('video-qr/', views.video_qr, name='video-qr'),
-
-    
-
-    path('qr_code/', views.qr_code, name="qr_code"),
 ]
+
+urlpatterns += static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)

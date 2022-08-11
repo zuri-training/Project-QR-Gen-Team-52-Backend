@@ -16,7 +16,7 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-    <link rel="stylesheet" href="{% static "Pages/login.css" %}">
+    <link rel="stylesheet" href="{% static 'Pages/login.css' %}">
     <title>QR Generator</title>
   </head>
   
@@ -26,7 +26,7 @@
         <div class="">
           <nav class="navbar">
             <div class="nav_logo">
-              <img src="{% static "logo/logo-black.png" %}" class="nav_logo" alt="" />
+              <img src="{% static 'logo/logo-black.png' %}" class="nav_logo" alt="" />
               <p>TEAM 52</p>
             </div>
 
@@ -55,11 +55,11 @@
         <form action="#" method="POST">
           {% csrf_token %}
           <tr>
-            <td id="labb">Email</td>
+            <td id="labb">Username</td>
           </tr>
 
           <tr>
-            <td><input type="email" name="email" id="email" placeholder="  team52@zuri.com"></td>
+            <td><input type="text" name="username" id="email" placeholder=" team52@zuri"></td>
           </tr>
 
           <tr>
