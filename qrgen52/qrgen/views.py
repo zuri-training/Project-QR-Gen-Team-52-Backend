@@ -64,10 +64,13 @@ def contactpage(request):
     return render(request, 'contactus.html', {})
 
 def aboutpage(request):
-    return render(request, 'index.html', {})
+    return render(request, 'about_us.html', {})
 
 def faqpage(request):
-    return render(request, 'index.html', {})
+    return render(request, 'faqs.html', {})
+
+def helppage(request):
+    return render(request, 'help.html', {})
 
 def create_link(request):
     Url=None
@@ -97,3 +100,37 @@ def send_mail(request):
     return render(request,"Qr_Pages/email.html",{'qr_code':qr_code})
     
 
+def contact_details(request):
+    name=None
+    company=None
+    address=None
+    # website=None
+    phoneNumber=None
+    if request.method == "POST":
+        name=request.POST['name']
+        company = request.POST['company']
+        address = request.POST['address']
+        phoneNumber = request.POST['email']
+        # generate_link = Contact_Details(
+            # user=request.user,name=name, phoneNumber=phoneNumber, company=company, address=address, email=email)
+        # generate_link.save()
+    
+    
+    #  qr_code= Send_Mail.objects.filter(company=company)
+    return render(request, 'Qr_Pages/contact.html', {})
+
+
+def text_message(request):
+    return render(request, 'Qr_Pages/text_message.html', {})
+
+
+def image_upload(request):
+    return render(request, 'Qr_Pages/image_upload.html', {})
+
+
+def video(request):
+    return render(request, 'Qr_Pages/video_upload.html', {})
+
+
+def audio(request):
+    return render(request, 'Qr_Pages/audio_file.html', {})

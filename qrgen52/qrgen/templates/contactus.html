@@ -1,5 +1,7 @@
 {% load static %}
 
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -38,11 +40,11 @@
             <p>TEAM 52</p>
           </div>
 
-          <ul class="nav_links">
+         <ul class="nav_links">
             <li><a href="{% url 'home' %}">Home</a></li>
             <li><a href="{% url 'about' %}">About</a></li>
             <li><a href="{% url 'faq' %}">FAQ</a></li>
-            <li><a href="#">Help</a></li>
+            <li><a href="{% url 'help' %}">Help</a></li>
             <li><a href="{% url 'contact' %}">Contact Us</a></li>
           </ul>
           <div class="nav_icon">

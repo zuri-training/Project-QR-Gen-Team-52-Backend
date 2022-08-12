@@ -1,4 +1,5 @@
 {% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -17,8 +18,8 @@
       integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A=="
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
-    />
-    <link rel="stylesheet" href="{% static 'Pages/create_link.css' %}" />
+    /><link rel="stylesheet" href="{% static "qrpages/create_link.css" %}">
+    
     <title>Create Link</title>
   </head>
   <body>
@@ -30,32 +31,32 @@
         <nav class="nav">
           <ul class="nav-list">
             <li class="nav-list-item">
-              <a href="#"
+              <a href="{% url 'create_link' %}"
                 ><i class="fa-solid fa-link"></i><span> Create Link</span></a
               >
             </li>
             <li class="nav-list-item">
-              <a href="#"
+              <a href="{% url 'contact_details' %}"
                 ><i class="fa-solid fa-person"></i
                 ><span>Contact details </span></a
               >
             </li>
             <li class="nav-list-item">
-              <a href="#"
+              <a href="{% url 'text_message' %}"
                 ><i class="fa-solid fa-comment"></i><span>Text Message</span></a
               >
             </li>
             <li class="nav-list-item">
-              <a href="#"
+              <a href="{% url 'image_upload' %}"
                 ><i class="fa-solid fa-image"></i><span>Images</span></a>
               
             </li>
             <li class="nav-list-item">
-              <a href="#">
+               <a href="{% url 'video' %}">
                 <i class="fa-solid fa-video"></i><span>Videos</span></a>
             </li>
             <li class="nav-list-item">
-              <a href="#"
+               <a href="{% url 'audio' %}"
                 ><i class="fa-solid fa-volume-high"></i
                 ><span>Audio File</span></a
               >
@@ -67,7 +68,7 @@
               >
             </li>
             <li class="nav-list-item">
-              <a href="#"
+               <a href="{% url 'send_mail' %}"
                 ><i class="fa-solid fa-envelope-circle-check"></i
                 ><span>Send Mail</span></a
               >
