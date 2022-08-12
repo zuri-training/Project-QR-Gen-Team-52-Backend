@@ -96,7 +96,9 @@
             <div class="drag_drop">
               <h4 class="drag_drop_desc">Drag and drop images here</h4>
               <button class="default">+ Upload</button>
-              <input class="file" type="file" />
+              
+              <input class="file" type="file" name="image"/>
+              </form>
             </div>
           </div>
           <br />
@@ -114,12 +116,14 @@
               >Add text to your image to your gallery. Optionally add a link to
               your website</span
             >
-            <form>
+            <form method="post">
+             {% csrf_token %}
               <p>
                 <label>Title:</label>
                 <input
                   type="text"
                   id="title"
+                  name="title"
                   placeholder="Title for your gallery"
                 />
               </p>
@@ -127,6 +131,7 @@
                 <label>Description: </label>
                 <textarea
                   id="description"
+                  name="desc"
                   cols="30"
                   rows="10"
                   placeholder="Description for your gallery"
@@ -137,15 +142,18 @@
                 <label>Website:</label>
                 <input type="url" id="website" placeholder="www.website.com" />
               </p>
-            </form>
+           
           </div>
-          <div id="done"><button>Done</button></div>
+          <div id="done"><button type="submit">Done</button></div>
+        
         </section>
 
         <section class="right">
           <div class="top">
             <div class="qr-wrapper">
-              <img src="{% static "logo/logo-white.png" %}" alt="Logo" />
+              {% for qr in qr_code %}
+            <img src="{{qr.image.url}}"/><br>
+            {%endfor%}
             </div>
           </div>
 
@@ -185,7 +193,7 @@
               <div class="dropdown-content">
                 <a href="#"
                   ><label for="colorpicker">Color Picker:</label>
-                  <input type="color" id="colorpicker" value="black"
+                  <input type="color" name="color" id="colorpicker" value="black"
                 /></a>
                 <a href="#"></a>
                 <a href="#"></a>
@@ -210,6 +218,7 @@
               </button>
             </div>
           </div>
+        </form>
         </section>
       </section>
     </div>

@@ -1,13 +1,14 @@
 import email
 from email.mime import image
 import imp
-from turtle import color
+import numbers
+from turtle import color, title
 from wsgiref import validate
 from django.shortcuts import render, redirect
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
-from .models import Create_link
+from .models import Create_link, Text_Message,Contact_Details
 from .models import Send_Mail
 
 # Create your views here.
@@ -91,8 +92,8 @@ def send_mail(request):
         company=request.POST['company']
         address=request.POST['address']
         email=request.POST['email']
-        #Color = request.POST['color']
-        generate_link = Send_Mail(user=request.user,company=company,address=address,email=email)
+        Color = request.POST['color']
+        generate_link = Send_Mail(user=request.user,company=company,address=address,email=email,color=Color)
         generate_link.save()
         
 
@@ -101,30 +102,39 @@ def send_mail(request):
     
 
 def contact_details(request):
-    name=None
-    company=None
-    address=None
-    # website=None
+    contact_name=None
     phoneNumber=None
     if request.method == "POST":
-        name=request.POST['name']
+        contact_name = request.POST['contact_name']
         company = request.POST['company']
+        email= request.POST['email']
+        website= request.POST['website']
         address = request.POST['address']
-        phoneNumber = request.POST['email']
-        # generate_link = Contact_Details(
-            # user=request.user,name=name, phoneNumber=phoneNumber, company=company, address=address, email=email)
-        # generate_link.save()
+        phoneNumber = request.POST['number']
+        generate_link = Contact_Details(
+        user=request.user,contact_name=contact_name,number=phoneNumber,email=email,website=website, company=company, address=address)
+        generate_link.save()
     
     
-    #  qr_code= Send_Mail.objects.filter(company=company)
-    return render(request, 'Qr_Pages/contact.html', {})
+    qr_code= Contact_Details.objects.filter(contact_name=contact_name)
+    return render(request, 'Qr_Pages/contact.html', {'qr_code':qr_code})
 
 
 def text_message(request):
-    return render(request, 'Qr_Pages/text_message.html', {})
+    number=None
+    text = None
+    if request.method=="POST":
+        number=request.POST['number']
+        text=request.POST['text']
+        Color = request.POST['color']
+        generate_link = Text_Message(user=request.user,number=number,text=text,color=Color)
+        generate_link.save()
+    qr_code= Text_Message.objects.filter(number=number)
+    return render(request, 'Qr_Pages/text_message.html', {'qr_code':qr_code})
 
 
 def image_upload(request):
+    
     return render(request, 'Qr_Pages/image_upload.html', {})
 
 

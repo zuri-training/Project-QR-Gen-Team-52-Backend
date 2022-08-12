@@ -88,27 +88,30 @@
       </div>
       <section class="left">
         <form class="Message-form" method="post">
+          {% csrf_token %}
           <div class="form-group">
             <label class="form-group">
               <p class="form-group-label">Phone Number</p>
-              <input type="text" name="name" placeholder="Phone Number" required />
+              <input type="text" name="number" placeholder="Phone Number" required />
             </label>
           <div class="form-group">
             <label class="form-group">
-                <textarea cols="30" rows="20" placeholder="Enter text "></textarea>
+                <textarea cols="30" rows="20" name="text" placeholder="Enter text " maxlength="250"></textarea>
             </label>
             <div><p>0/250</p></div>
           </div>
           </div>
           <div class="bottom">
-            <a href="#" target="blank" type="button" class="submit-button">Done</a> 
+            <button type="submit" class="submit-button">Done</button>  
           </div>
-        </form>
+        
       </section>
       <section class="right">
         <div class="top">
           <div class="qr-wrapper">
-            <img src="{% static 'img/qr-large.png' %}" alt="Qr large" />
+            {% for qr in qr_code %}
+            <img src="{{qr.image.url}}"/><br>
+            {%endfor%}
           </div>
         </div>
         <div class="side-other">
@@ -147,13 +150,15 @@
               <div class="dropdown-content">
                 <a href="#"
                   ><label for="colorpicker">Color Picker:</label>
-                  <input type="color" id="colorpicker" value="black"
+                  <form action="" method="post">
+                  <input type="color" name="color" id="colorpicker" value="black"
                 /></a>
                 <a href="#"></a>
                 <a href="#"></a>
               </div>
+            </form>
             </div>
-
+          
             <div class="dropdown" id="pdrop22">
               <button class="dropbtn">
                 Logo
@@ -174,6 +179,5 @@
 
       </section>
     </main>
-    <script src="image_upload.js"></script>
   </body>
 </html>
