@@ -5,7 +5,9 @@
   list-style: none;
   text-decoration: none;
 }
-
+html,body{
+    overflow-y: hidden;
+}
 body {
   font-family: "Montserrat", sans-serif;
   height: 100vh;
@@ -109,7 +111,7 @@ section.left .section-title {
 }
 
 section.left .contact-form {
-  margin-top: 68px;
+  margin-top: 48px;
   display: flex;
   flex-direction: column;
   /* align-items: center; */

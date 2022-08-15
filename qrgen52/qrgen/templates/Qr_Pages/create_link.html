@@ -18,7 +18,7 @@
       integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A=="
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
-    /><link rel="stylesheet" href="{% static "qrpages/create_link.css" %}">
+    /><link rel="stylesheet" href="{% static 'qrpages/create_link.css' %}">
     
     <title>Create Link</title>
   </head>
@@ -61,12 +61,7 @@
                 ><span>Audio File</span></a
               >
             </li>
-            <li class="nav-list-item">
-              <a href="#"
-                ><i class="fa-solid fa-file-arrow-up"></i
-                ><span>Upload Files</span></a
-              >
-            </li>
+            
             <li class="nav-list-item">
                <a href="{% url 'send_mail' %}"
                 ><i class="fa-solid fa-envelope-circle-check"></i
@@ -96,30 +91,10 @@
         <section class="right">
           <div class="top">
             <div class="qr-wrapper">
-              {% for qr in qr_code %}
-      <img src="{{qr.image.url}}"/><br>
-      {%endfor%}
+              <img src="{% static 'img/qr-large.png' %}" alt="Qr large" />
             </div>
           </div>
           
-          <div class="side-other">
-        <div class="dropdown" id="pdrop">
-            <button class="dropbtn">Pattern <span class="material-symbols-outlined">
-              keyboard_arrow_down
-              </span></button>
-            <div class="dropdown-content">
-              <a href="#"><span class="material-symbols-outlined">
-                qr_code_scanner
-                </span></a>
-               <a href="" class="drpicon-"><i class="fa-solid fa-qrcode"></i></a>
-              <a href="#"><span class="material-symbols-outlined">
-                qr_code_2
-                </span></a>
-              <a href="#"><span class="material-symbols-outlined">
-                qr_code
-                </span></a>
-            </div>
-          </div>
   
           <div class="dropdown" id="pdrop2">
             <button class="dropbtn">Color <span class="material-symbols-outlined">
@@ -133,16 +108,7 @@
             </div>
           </div>
   
-          <div class="dropdown" id="pdrop22">
-            <button class="dropbtn">Logo <span class="material-symbols-outlined">
-              keyboard_arrow_down
-              </span></button>
-              <div class="dropdown-content">
-                <input type="file" name="logo" accept="image/*">
-              </div>
-           
-          </div>
-  
+         
           <div class="bottom" class="dropdown" id="pdrop2">
             <button type="submit" class="submit-button">Generate QR Code</button>
           </div>
@@ -155,5 +121,6 @@
         </section>
       </section>
     </div>
+    
   </body>
 </html>

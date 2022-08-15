@@ -88,22 +88,21 @@
       </div>
       <section class="left">
         <form class="Message-form" method="post">
+          {% csrf_token %}
           <div class="form-group">
             <label class="form-group">
               <p class="form-group-label">Phone Number</p>
-              <input type="text" name="name" placeholder="Phone Number" required />
+              <input type="text" name="number" placeholder="Phone Number" required />
             </label>
           <div class="form-group">
             <label class="form-group">
-                <textarea cols="30" rows="20" placeholder="Enter text "></textarea>
+                <textarea cols="30" rows="20" name="text" placeholder="Enter text " maxlength="250" required></textarea>
             </label>
             <div><p>0/250</p></div>
           </div>
           </div>
-          <div class="bottom">
-            <a href="#" target="blank" type="button" class="submit-button">Done</a> 
-          </div>
-        </form>
+          
+        
       </section>
       <section class="right">
         <div class="top">
@@ -111,30 +110,7 @@
             <img src="{% static 'img/qr-large.png' %}" alt="Qr large" />
           </div>
         </div>
-        <div class="side-other">
-            <div class="dropdown" id="pdrop">
-              <button class="dropbtn">
-                Pattern
-                <span class="material-symbols-outlined">
-                  keyboard_arrow_down
-                </span>
-              </button>
-              <div class="dropdown-content">
-                <a href="#"
-                  ><span class="material-symbols-outlined">
-                    qr_code_scanner
-                  </span></a
-                >
-                <a href="" class="drpicon-"
-                  ><i class="fa-solid fa-qrcode"></i
-                ></a>
-                <a href="#"
-                  ><span class="material-symbols-outlined"> qr_code_2 </span></a
-                >
-                <a href="#"
-                  ><span class="material-symbols-outlined"> qr_code </span></a
-                >
-              </div>
+        <div>
             </div>
 
             <div class="dropdown" id="pdrop2">
@@ -147,33 +123,24 @@
               <div class="dropdown-content">
                 <a href="#"
                   ><label for="colorpicker">Color Picker:</label>
-                  <input type="color" id="colorpicker" value="black"
+                  <form action="" method="post">
+                  <input type="color" name="color" id="colorpicker" value="black"
                 /></a>
                 <a href="#"></a>
                 <a href="#"></a>
               </div>
+            
             </div>
-
-            <div class="dropdown" id="pdrop22">
-              <button class="dropbtn">
-                Logo
-                <span class="material-symbols-outlined">
-                  keyboard_arrow_down
-                </span>
-              </button>
-              <div class="dropdown-content">
-                <input type="file" accept="image/*" />
-              </div>
-            </div>
+          
+            
 
             <div class="bottom" class="dropdown" id="pdrop2">
                 <button type="submit" class="submit-button">
                   Generate QR Code
                 </button>
               </div>
-
+            </form>
       </section>
     </main>
-    <script src="image_upload.js"></script>
   </body>
 </html>

@@ -13,6 +13,8 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 from pathlib import Path
 from dotenv import load_dotenv
 import os
+import django_heroku
+import dj_database_url
 
 load_dotenv()
 
@@ -157,7 +159,8 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 
 SITE_ID = 1
-LOGIN_REDIRECT_URL = '/create_link'
+#LOGIN_REDIRECT_URL = '/create_link'
+LOGIN_URL = 'login'
 
 SOCIALACCOUNT_PROVIDERS = {
     'google': {
@@ -170,3 +173,4 @@ SOCIALACCOUNT_PROVIDERS = {
         }
     }
 }
+django_heroku.settings(locals())

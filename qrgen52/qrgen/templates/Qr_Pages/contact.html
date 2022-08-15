@@ -17,14 +17,14 @@
       integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A=="
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
-    /><link rel="stylesheet" href="{% static "qrpages/contact.css" %}" />
+    /><link rel="stylesheet" href="{% static 'qrpages/contact.css' %}" />
     
     <title>Contact Details</title>
   </head>
   <body>
     <section class="sidebar">
       <div class="logo-wrapper">
-        <img src="{% static "logo/logo-white.png" %}" alt="Logo" />
+        <img src="{% static 'logo/logo-white.png' %}" alt="Logo" />
       </div>
       <nav class="nav">
           <ul class="nav-list">
@@ -59,12 +59,7 @@
                 ><span>Audio File</span></a
               >
             </li>
-            <li class="nav-list-item">
-              <a href="#"
-                ><i class="fa-solid fa-file-arrow-up"></i
-                ><span>Upload Files</span></a
-              >
-            </li>
+            
             <li class="nav-list-item">
                <a href="{% url 'send_mail' %}"
                 ><i class="fa-solid fa-envelope-circle-check"></i
@@ -85,22 +80,22 @@
       <section class="left">
         <h2 class="section-title">Add Contact Information</h2>
         <form class="contact-form" method="post">
+          {% csrf_token %}
           <div class="form-group">
             <label class="form-group">
               <p class="form-group-label">Name</p>
-              <input type="text" name="name" placeholder="Name" required />
+              <input type="text" name="contact_name" placeholder="Name" required />
             </label>
-          </div>
           <div class="form-group">
             <label class="form-group">
               <p class="form-group-label">Company</p>
-              <input type="text" name="name" placeholder="Company" required />
+              <input type="text" name="company" placeholder="Company"  />
             </label>
           </div>
           <div class="form-group">
             <label class="form-group">
               <p class="form-group-label">Website</p>
-              <input type="text" name="name" placeholder="Website" required />
+              <input type="url" name="website" placeholder="Website" />
             </label>
           </div>
           <div class="form-group">
@@ -108,9 +103,8 @@
               <p class="form-group-label">Email address</p>
               <input
                 type="text"
-                name="name"
+                name="email"
                 placeholder="Email address"
-                required
               />
             </label>
           </div>
@@ -119,7 +113,7 @@
               <p class="form-group-label">Phone number</p>
               <input
                 type="text"
-                name="name"
+                name="number"
                 placeholder="Phone number"
                 required
               />
@@ -128,10 +122,10 @@
           <div class="form-group">
             <label class="form-group">
               <p class="form-group-label">Address</p>
-              <input type="text" name="name" placeholder="Address" required />
+              <input type="text" name="address" placeholder="Address"  />
             </label>
           </div>
-        </form>
+  
       </section>
       <section class="right">
         <div class="top">
@@ -139,51 +133,33 @@
             <img src="{% static 'img/qr-large.png' %}" alt="Qr large" />
           </div>
         </div>
-        <div class="middle">
-          <div class="accordion-list">
-            <div class="accordion">
-              <div class="accordion-top">
-                <p>Pattern</p>
-                <i class="fa-solid fa-chevron-down"></i>
-              </div>
-              <div class="accordion-body">
-                <div class="icon-wrapper">
-                  <img src="../img/qr-1.svg" alt="qr-1" />
-                </div>
-                <div class="icon-wrapper">
-                  <img src="../img/qr-2.svg" alt="qr-2" />
-                </div>
-                <div class="icon-wrapper">
-                  <img src="../img/qr-3.svg" alt="qr-3" />
-                </div>
-                <div class="icon-wrapper">
-                  <img src="../img/qr-4.svg" alt="qr-4" />
-                </div>
-              </div>
-            </div>
-            <div class="accordion">
-              <div class="accordion-top">
-                <p>Color</p>
-                <i class="fa-solid fa-chevron-down"></i>
-              </div>
-            </div>
-            <div class="accordion">
-              <div class="accordion-top">
-                <p>Logo</p>
-                <i class="fa-solid fa-chevron-down"></i>
-              </div>
-            </div>
-          </div>
-          <div class="grid-container">
-              <div class="grid-item"><p>png</p></div>
-              <div class="grid-item"><p>Jpg</p></div>
-              <div class="grid-item"><p></p>Pdf</p></div>
-          </div>
-        </div>
+       
 
-        <div class="bottom">
-          <button type="submit" class="submit-button">Generate QR Code</button>
-        </div>
+          <div class="dropdown" id="pdrop2">
+            <button class="dropbtn">
+              Color
+              <span class="material-symbols-outlined">
+                keyboard_arrow_down
+              </span>
+            </button>
+            <div class="dropdown-content">
+              <a href="#"
+                ><label for="colorpicker">Color Picker:</label>
+                <input type="color" name="color" id="colorpicker" value="black"
+              /></a>
+              <a href="#"></a>
+              <a href="#"></a>
+            </div>
+          
+          </div>
+        
+          
+          <div class="bottom" class="dropdown" id="pdrop2">
+              <button type="submit" class="submit-button">
+                Generate QR Code
+              </button>
+            </form>
+            </div>
       </section>
     </main>
   </body>

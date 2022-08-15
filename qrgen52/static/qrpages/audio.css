@@ -79,8 +79,14 @@ section.left {
     flex-grow: 1;
     padding-top: 100px;
     height: 100vh;
+    margin-top: 10px;
 }
-
+.warn{
+    color: white;
+    font-size: 18px;
+    text-align: center;
+    font-weight: 600;
+}
 #done {
     width: 250px;
     margin: 0 auto;
@@ -89,7 +95,7 @@ section.left {
 #done button {
     width: 200px;
     height: 40px;
-    margin-top: 30px;
+    margin-top: 10px;
     margin-left: 25px;
     background-color: #e12d93;
     color: white;

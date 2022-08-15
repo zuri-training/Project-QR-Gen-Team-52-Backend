@@ -26,6 +26,8 @@
     <title>Image Upload</title>
   </head>
   <body>
+    <small class="warn"><marquee>Dear User, this Functionality is not available at the moment! Coming Soon!!!</marquee></small>
+              
     <div id="container">
       <section class="sidebar">
         <div class="logo-wrapper">
@@ -64,12 +66,7 @@
                 ><span>Audio File</span></a
               >
             </li>
-            <li class="nav-list-item">
-              <a href="#"
-                ><i class="fa-solid fa-file-arrow-up"></i
-                ><span>Upload Files</span></a
-              >
-            </li>
+            
             <li class="nav-list-item">
                <a href="{% url 'send_mail' %}"
                 ><i class="fa-solid fa-envelope-circle-check"></i
@@ -79,9 +76,11 @@
           </ul>
         </nav>
       </section>
-
+      
       <section class="main">
         <section class="left">
+          <div>
+            
           <div class="image_upload">
             <div class="image_text_1">
               <small class="exc"> <i class="fa-solid fa-image"></i></small>
@@ -96,7 +95,9 @@
             <div class="drag_drop">
               <h4 class="drag_drop_desc">Drag and drop images here</h4>
               <button class="default">+ Upload</button>
-              <input class="file" type="file" />
+              
+              <input class="file" type="file" name="image"/>
+              </form>
             </div>
           </div>
           <br />
@@ -114,12 +115,14 @@
               >Add text to your image to your gallery. Optionally add a link to
               your website</span
             >
-            <form>
+            <form method="post">
+             {% csrf_token %}
               <p>
                 <label>Title:</label>
                 <input
                   type="text"
                   id="title"
+                  name="title"
                   placeholder="Title for your gallery"
                 />
               </p>
@@ -127,6 +130,7 @@
                 <label>Description: </label>
                 <textarea
                   id="description"
+                  name="desc"
                   cols="30"
                   rows="10"
                   placeholder="Description for your gallery"
@@ -137,19 +141,21 @@
                 <label>Website:</label>
                 <input type="url" id="website" placeholder="www.website.com" />
               </p>
-            </form>
+            </div>
           </div>
-          <div id="done"><button>Done</button></div>
+          <div id="done"><button type="submit">Done</button></div>
+        
         </section>
 
         <section class="right">
           <div class="top">
             <div class="qr-wrapper">
-              <img src="{% static "logo/logo-white.png" %}" alt="Logo" />
+             
             </div>
           </div>
 
           <div class="side-other">
+            
             <div class="dropdown" id="pdrop">
               <button class="dropbtn">
                 Pattern
@@ -185,7 +191,7 @@
               <div class="dropdown-content">
                 <a href="#"
                   ><label for="colorpicker">Color Picker:</label>
-                  <input type="color" id="colorpicker" value="black"
+                  <input type="color" name="color" id="colorpicker" value="black"
                 /></a>
                 <a href="#"></a>
                 <a href="#"></a>
@@ -210,6 +216,7 @@
               </button>
             </div>
           </div>
+        </form>
         </section>
       </section>
     </div>

@@ -22,10 +22,12 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-    <link rel="stylesheet" href="{% static "qrpages/audio.css" %}" />
+    <link rel="stylesheet" href="{% static 'qrpages/audio.css' %}" />
     <title>Audio Upload</title>
   </head>
   <body>
+    <small class="warn"><marquee>Dear User, this Functionality is not available at the moment.Coming Soon!!!</marquee></small>
+        
     <div id="container">
       <section class="sidebar">
         <div class="logo-wrapper">
@@ -64,12 +66,7 @@
                 ><span>Audio File</span></a
               >
             </li>
-            <li class="nav-list-item">
-              <a href="#"
-                ><i class="fa-solid fa-file-arrow-up"></i
-                ><span>Upload Files</span></a
-              >
-            </li>
+            
             <li class="nav-list-item">
                <a href="{% url 'send_mail' %}"
                 ><i class="fa-solid fa-envelope-circle-check"></i
@@ -146,7 +143,6 @@
         <section class="right">
           <div class="top">
             <div class="qr-wrapper">
-              <img src="../img/qr-large.png" alt="Qr large" />
             </div>
           </div>
 
