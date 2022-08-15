@@ -1,9 +1,7 @@
-from asyncio import constants
-import numbers
-from turtle import title
+
 from django.db import models
 import qrcode
-from PIL import Image, ImageDraw
+
 from io import BytesIO
 from django.core.files import File
 from django.contrib.auth.models import User
@@ -13,7 +11,7 @@ import random
 class Create_link(models.Model):
     user= models.ForeignKey(User, on_delete=models.CASCADE)
     url=models.URLField()
-    image=models.ImageField(upload_to='qrcode',blank=True)
+    qr_image=models.ImageField(upload_to='qrcode',blank=True)
     color=models.CharField(max_length=40, default='black')
 
     def __str__(self):
@@ -29,13 +27,9 @@ class Create_link(models.Model):
       qr.add_data(self.url)
       qr.make(fit=True)
       qrcode_img= qr.make_image(fill_color=self.color)
-      canvas=Image.new("RGB", (300,300),"white")
-      draw=ImageDraw.Draw(canvas)
-      canvas.paste(qrcode_img)
       buffer=BytesIO()
-      canvas.save(buffer,"PNG")
-      self.image.save(f'image{random.randint(0,9999)}',File(buffer),save=False)
-      canvas.close()
+      qrcode_img.save(buffer,format='PNG')
+      self.qr_image.save('myqr.png',File(buffer),save=False)
       super().save(*args,**kwargs)
 
 
@@ -44,7 +38,7 @@ class Send_Mail(models.Model):
     company=models.CharField(max_length=100)
     email=models.EmailField()
     address=models.CharField(max_length=100)
-    image=models.ImageField(upload_to='qrcode',blank=True)
+    Qr_Image=models.ImageField(upload_to='qrcode',blank=True)
     color=models.CharField(max_length=40, default='black')
 
     def __str__(self):
@@ -62,20 +56,17 @@ class Send_Mail(models.Model):
       qr.add_data('address:'+  self.address + '\n')
       qr.make(fit=True)
       qrcode_img= qr.make_image(fill_color=self.color)
-      canvas=Image.new("RGB", (200,200),"white")
-      draw=ImageDraw.Draw(canvas)
-      canvas.paste(qrcode_img)
       buffer=BytesIO()
-      canvas.save(buffer,"PNG")
-      self.image.save(f'image{random.randint(0,9999)}',File(buffer),save=False)
-      canvas.close()
+      qrcode_img.save(buffer,format='PNG')
+      self.Qr_Image.save('myqr.png',File(buffer),save=False)
       super().save(*args,**kwargs)
+
 
 class Text_Message(models.Model):
     user= models.ForeignKey(User, on_delete=models.CASCADE)
     number=models.CharField(max_length=20)
     text=models.TextField(max_length=250)
-    image=models.ImageField(upload_to='qrcode',blank=True)
+    Qr_image=models.ImageField(upload_to='qrcode',blank=True)
     color=models.CharField(max_length=40, default='black')
 
     def __str__(self):
@@ -92,14 +83,11 @@ class Text_Message(models.Model):
       qr.add_data('Text:' + self.text + '\n')
       qr.make(fit=True)
       qrcode_img= qr.make_image(fill_color=self.color)
-      canvas=Image.new("RGB", (300,300),"white")
-      draw=ImageDraw.Draw(canvas)
-      canvas.paste(qrcode_img)
       buffer=BytesIO()
-      canvas.save(buffer,"PNG")
-      self.image.save(f'image{random.randint(0,9999)}',File(buffer),save=False)
-      canvas.close()
+      qrcode_img.save(buffer,format='PNG')
+      self.Qr_image.save('myqr.png',File(buffer),save=False)
       super().save(*args,**kwargs)
+
 
 
 
@@ -111,7 +99,7 @@ class Contact_Details(models.Model):
     email=models.EmailField()
     number=models.CharField(max_length=15)
     address=models.CharField(max_length=100)
-    image=models.ImageField(upload_to='qrcode',blank=True)
+    qr_Image=models.ImageField(upload_to='qrcode',blank=True)
     color=models.CharField(max_length=40, default='black')
 
     def __str__(self):
@@ -132,13 +120,9 @@ class Contact_Details(models.Model):
       qr.add_data('Address:'+  self.address + '\n')
       qr.make(fit=True)
       qrcode_img= qr.make_image(fill_color=self.color)
-      canvas=Image.new("RGB", (300,300),"white")
-      draw=ImageDraw.Draw(canvas)
-      canvas.paste(qrcode_img)
       buffer=BytesIO()
-      canvas.save(buffer,"PNG")
-      self.image.save(f'image{random.randint(0,9999)}',File(buffer),save=False)
-      canvas.close()
+      qrcode_img.save(buffer,format='PNG')
+      self.qr_Image.save('myqr.png',File(buffer),save=False)
       super().save(*args,**kwargs)
 
 

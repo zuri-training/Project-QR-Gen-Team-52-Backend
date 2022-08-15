@@ -66,13 +66,11 @@
                 </div>
     
                 <ul class="mobnav_links">
-                    <li>
-                    <a href="../index.html">Home</a>
-                    </li>
-                    <li><a href="#">About</a></li>
-                    <li><a href="#">FAQ</a></li>
-                    <li><a href="#">Help</a></li>
-                    <li><a href="./contactus.html">Contact Us</a></li>
+                <li><a href="{% url 'home' %}">Home</a></li>
+            <li><a href="{% url 'about' %}">About</a></li>
+            <li><a href="{% url 'faq' %}">FAQ</a></li>
+            <li><a href="{% url 'help' %}">Help</a></li>
+            <li><a href="{% url 'contact' %}">Contact Us</a></li>
                 </ul>
                 <div class="mobnav_icon">
                     <a href=""> <i class="fa fa-user icon"></i></a>
@@ -170,7 +168,7 @@
                     <i class="fa-solid fa-pen"></i>
                     <a href=""><h2>Create & Edit</h2></a>
                     <a href=""><p>Delete a code<p></p></a>
-                    <a href=""><p>Edit or vlidate a code</p></a>
+                    <a href=""><p>Edit or validate a code</p></a>
                     <a href=""><p>Generate a code</p></a>
                 </div>
         </div>
@@ -184,7 +182,7 @@
                 <h4>Still Need Help?</h4>
             </div> 
             <div> 
-                <a href="{% url 'help' %}"><button class="fhbw">Contact Us</button></a>
+                <a href="{% url 'contact' %}"><button class="fhbw">Contact Us</button></a>
                 
             </div>
         </div>

@@ -96,48 +96,21 @@
             </label>
           <div class="form-group">
             <label class="form-group">
-                <textarea cols="30" rows="20" name="text" placeholder="Enter text " maxlength="250"></textarea>
+                <textarea cols="30" rows="20" name="text" placeholder="Enter text " maxlength="250" required></textarea>
             </label>
             <div><p>0/250</p></div>
           </div>
           </div>
-          <div class="bottom">
-            <button type="submit" class="submit-button">Done</button>  
-          </div>
+          
         
       </section>
       <section class="right">
         <div class="top">
           <div class="qr-wrapper">
-            {% for qr in qr_code %}
-            <img src="{{qr.image.url}}"/><br>
-            {%endfor%}
+            <img src="{% static 'img/qr-large.png' %}" alt="Qr large" />
           </div>
         </div>
-        <div class="side-other">
-            <div class="dropdown" id="pdrop">
-              <button class="dropbtn">
-                Pattern
-                <span class="material-symbols-outlined">
-                  keyboard_arrow_down
-                </span>
-              </button>
-              <div class="dropdown-content">
-                <a href="#"
-                  ><span class="material-symbols-outlined">
-                    qr_code_scanner
-                  </span></a
-                >
-                <a href="" class="drpicon-"
-                  ><i class="fa-solid fa-qrcode"></i
-                ></a>
-                <a href="#"
-                  ><span class="material-symbols-outlined"> qr_code_2 </span></a
-                >
-                <a href="#"
-                  ><span class="material-symbols-outlined"> qr_code </span></a
-                >
-              </div>
+        <div>
             </div>
 
             <div class="dropdown" id="pdrop2">
@@ -156,27 +129,17 @@
                 <a href="#"></a>
                 <a href="#"></a>
               </div>
-            </form>
+            
             </div>
           
-            <div class="dropdown" id="pdrop22">
-              <button class="dropbtn">
-                Logo
-                <span class="material-symbols-outlined">
-                  keyboard_arrow_down
-                </span>
-              </button>
-              <div class="dropdown-content">
-                <input type="file" accept="image/*" />
-              </div>
-            </div>
+            
 
             <div class="bottom" class="dropdown" id="pdrop2">
                 <button type="submit" class="submit-button">
                   Generate QR Code
                 </button>
               </div>
-
+            </form>
       </section>
     </main>
   </body>

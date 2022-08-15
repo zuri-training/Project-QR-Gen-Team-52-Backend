@@ -5,7 +5,11 @@
   list-style: none;
   text-decoration: none;
 }
+html,body{
+  overflow-y: hidden;
+  background: linear-gradient(116.99deg, #e12d93 0%, #2f113e 99.54%);
 
+}
 body {
   font-family: "Montserrat", sans-serif;
   height: 100vh;

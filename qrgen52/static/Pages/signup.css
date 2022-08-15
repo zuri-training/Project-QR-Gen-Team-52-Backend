@@ -17,6 +17,13 @@
     height: 30px;
 }
 
+.profile_link{
+   background-color: rgb(243, 128, 243);
+   padding: 15px;
+   border-radius: 8px;
+   line-height: 100px;
+}
+
 .bnt2:hover {
     color: rgb(243, 128, 243);
 }

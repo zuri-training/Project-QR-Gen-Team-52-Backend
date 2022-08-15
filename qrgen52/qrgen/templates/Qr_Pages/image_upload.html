@@ -26,6 +26,8 @@
     <title>Image Upload</title>
   </head>
   <body>
+    <small class="warn"><marquee>Dear User, this Functionality is not available at the moment! Coming Soon!!!</marquee></small>
+              
     <div id="container">
       <section class="sidebar">
         <div class="logo-wrapper">
@@ -64,12 +66,7 @@
                 ><span>Audio File</span></a
               >
             </li>
-            <li class="nav-list-item">
-              <a href="#"
-                ><i class="fa-solid fa-file-arrow-up"></i
-                ><span>Upload Files</span></a
-              >
-            </li>
+            
             <li class="nav-list-item">
                <a href="{% url 'send_mail' %}"
                 ><i class="fa-solid fa-envelope-circle-check"></i
@@ -79,9 +76,11 @@
           </ul>
         </nav>
       </section>
-
+      
       <section class="main">
         <section class="left">
+          <div>
+            
           <div class="image_upload">
             <div class="image_text_1">
               <small class="exc"> <i class="fa-solid fa-image"></i></small>
@@ -142,7 +141,7 @@
                 <label>Website:</label>
                 <input type="url" id="website" placeholder="www.website.com" />
               </p>
-           
+            </div>
           </div>
           <div id="done"><button type="submit">Done</button></div>
         
@@ -151,13 +150,12 @@
         <section class="right">
           <div class="top">
             <div class="qr-wrapper">
-              {% for qr in qr_code %}
-            <img src="{{qr.image.url}}"/><br>
-            {%endfor%}
+             
             </div>
           </div>
 
           <div class="side-other">
+            
             <div class="dropdown" id="pdrop">
               <button class="dropbtn">
                 Pattern

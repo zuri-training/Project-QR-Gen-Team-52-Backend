@@ -61,12 +61,7 @@
                 ><span>Audio File</span></a
               >
             </li>
-            <li class="nav-list-item">
-              <a href="#"
-                ><i class="fa-solid fa-file-arrow-up"></i
-                ><span>Upload Files</span></a
-              >
-            </li>
+            
             <li class="nav-list-item">
                <a href="{% url 'send_mail' %}"
                 ><i class="fa-solid fa-envelope-circle-check"></i
@@ -104,39 +99,21 @@
 
               
             </table>
-              <div id="done"><button type="submit">Done</button></div>
+              
             </div>
          
         </div>
 
       <div class="right">
           <div class="top">
-            {% for qr in qr_code %}
-            <img src="{{qr.image.url}}"/><br>
-            {%endfor%}
+            
           </div>
           
           <div class="side-other">
             
         
 
-        <div class="dropdown" id="pdrop">
-            <button class="dropbtn">Pattern <span class="material-symbols-outlined">
-              keyboard_arrow_down
-              </span></button>
-            <div class="dropdown-content">
-              <a href="#"><span class="material-symbols-outlined">
-                qr_code_scanner
-                </span></a>
-               <a href="" class="drpicon-"><i class="fa-solid fa-qrcode"></i></a>
-              <a href="#"><span class="material-symbols-outlined">
-                qr_code_2
-                </span></a>
-              <a href="#"><span class="material-symbols-outlined">
-                qr_code
-                </span></a>
-            </div>
-          </div>
+        
   
           <div class="dropdown" id="pdrop2">
             <button class="dropbtn">Color <span class="material-symbols-outlined">
@@ -150,12 +127,7 @@
             </div>
           </div>
   
-          <div class="dropdown" id="pdrop22">
-            <button class="dropbtn">Logo <span class="material-symbols-outlined">
-              keyboard_arrow_down
-              </span></button>
-           
-          </div>
+         
   
           <div class="bottom" class="dropdown" id="pdrop2">
             <button type="submit" class="submit-button">Generate QR Code</button>
