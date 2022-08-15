@@ -8,7 +8,30 @@ from django.contrib.auth.models import User
 
 # Create your models here.
 
-    
+class Create_Link(models.Model):
+    user= models.ForeignKey(User, on_delete=models.CASCADE)
+    url=models.URLField()
+    qr_image=models.ImageField(upload_to='qrcode',blank=True)
+    color=models.CharField(max_length=40, default='black')
+
+    def __str__(self):
+        return self.url
+
+    def save(self,*args,**kwargs):
+      qr = qrcode.QRCode(
+        version=1,
+        error_correction=qrcode.constants.ERROR_CORRECT_L,
+        box_size=10,
+        border=4
+      )  
+      qr.add_data(self.url)
+      qr.make(fit=True)
+      qrcode_img= qr.make_image(fill_color=self.color)
+      buffer=BytesIO()
+      qrcode_img.save(buffer,format='PNG')
+      self.qr_image.save('myqr.png',File(buffer),save=False)
+      super().save(*args,**kwargs)
+
 
 class Send_Mail(models.Model):
     user= models.ForeignKey(User, on_delete=models.CASCADE)
