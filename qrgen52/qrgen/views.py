@@ -3,7 +3,7 @@ from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
-from .models import Create_link, Text_Message,Contact_Details
+from .models import Text_Message,Contact_Details
 from .models import Send_Mail
 from PIL import Image
 import os
@@ -92,18 +92,7 @@ def faqpage(request):
 def helppage(request):
     return render(request, 'help.html', {})
 @login_required
-def create_link(request):
-    Url=None
-    if request.method=="POST":
-        Url=request.POST['url']
-        Color = request.POST['color']
-        generate_link = Create_link(user=request.user,url=Url,color=Color)   
-        generate_link.save()
-        return redirect('download_link')
-   
-    qr_code= Create_link.objects.filter(user=request.user)
-    
-    return render(request,"Qr_Pages/create_link.html",{'qr_code':qr_code})
+
 @login_required
 def send_mail(request):
     company=None
@@ -167,17 +156,8 @@ def video(request):
 def audio(request):
     return render(request, 'Qr_Pages/audio_file.html', {})
 
-def history(request):
-    
 
-    history_qr_code= Create_link.objects.all().filter(user=request.user)
-    return render(request, 'history.html', {'history_qr_code':history_qr_code})
 
-@login_required
-def download_createlink(request):
-    latest_qr_code = Create_link.objects.filter(user=request.user).order_by('-id')[0]
-    
-    return render(request, 'download.html', {'latest_qr_code':latest_qr_code})
 @login_required
 def download_mail(request):
     latest_qr_code = Send_Mail.objects.filter(user=request.user).order_by('-id')[0]

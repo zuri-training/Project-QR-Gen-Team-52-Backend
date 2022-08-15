@@ -96,11 +96,22 @@ WSGI_APPLICATION = 'qrgen52.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
-DATABASES = {
+#DATABASES = {
+    #'default': {
+        #'ENGINE': 'django.db.backends.sqlite3',
+        #'NAME': BASE_DIR / 'db.sqlite3',
+   # }
+#}
+DATABASES ={
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'daglj019ksk2dm',
+        'USER':'cwourzfpgwmsxq',
+        'PASSWORD':'8f92790e04db5f5a31f468865ce72ebd28fb321e723b4dd1f8d9e9bf687fd285',
+        'HOST': 'ec2-34-234-240-121.compute-1.amazonaws.com',
+        'PORT': '5432'
     }
+
 }
 
 
@@ -173,4 +184,5 @@ SOCIALACCOUNT_PROVIDERS = {
         }
     }
 }
+
 django_heroku.settings(locals())
